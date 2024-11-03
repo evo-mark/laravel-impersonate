@@ -1,6 +1,26 @@
-# Laravel Impersonate
+<p align="center">
+    <a href="https://evomark.co.uk" target="_blank" alt="Link to evoMark's website">
+        <picture>
+          <source media="(prefers-color-scheme: dark)" srcset="https://evomark.co.uk/wp-content/uploads/static/evomark-logo--dark.svg">
+          <source media="(prefers-color-scheme: light)" srcset="https://evomark.co.uk/wp-content/uploads/static/evomark-logo--light.svg">
+          <img alt="evoMark company logo" src="https://evomark.co.uk/wp-content/uploads/static/evomark-logo--light.svg" width="500">
+        </picture>
+    </a>
+</p>
 
-[![Build Status](https://travis-ci.org/404labfr/laravel-impersonate.svg?branch=master)](https://travis-ci.org/404labfr/laravel-impersonate) [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/404labfr/laravel-impersonate/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/404labfr/laravel-impersonate/?branch=master)
+<p align="center">
+    <a href="https://packagist.org/packages/evo-mark/laravel-impersonate">
+        <img src="https://img.shields.io/packagist/v/evo-mark/laravel-impersonate?logo=packagist&logoColor=white" alt="Build status" />
+    </a>
+    <a href="https://packagist.org/packages/evo-mark/laravel-impersonate">
+        <img src="https://img.shields.io/packagist/dt/evo-mark/laravel-impersonate" alt="Total Downloads">
+    </a>
+    <a href="https://packagist.org/packages/evo-mark/laravel-impersonate">
+        <img src="https://img.shields.io/packagist/l/evo-mark/laravel-impersonate" alt="License">
+    </a>
+</p>
+
+# Laravel Impersonate
 
 **Laravel Impersonate** makes it easy to **authenticate as your users**. Add a simple **trait** to your **user model** and impersonate as one of your users in one click.
  
