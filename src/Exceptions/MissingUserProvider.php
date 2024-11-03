@@ -1,6 +1,6 @@
 <?php
 
-namespace Lab404\Impersonate\Exceptions;
+namespace EvoMark\Impersonate\Exceptions;
 
 use Throwable;
 

@@ -1,8 +1,8 @@
 <?php
 
-namespace Lab404\Tests;
+namespace EvoMark\Tests;
 
-use Lab404\Impersonate\Services\ImpersonateManager;
+use EvoMark\Impersonate\Services\ImpersonateManager;
 
 class ModelImpersonateTest extends TestCase
 {

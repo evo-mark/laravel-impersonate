@@ -1,10 +1,10 @@
 <?php
 
-namespace Lab404\Tests\Stubs\Models;
+namespace EvoMark\Tests\Stubs\Models;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use Lab404\Impersonate\Models\Impersonate;
+use EvoMark\Impersonate\Models\Impersonate;
 
 class OtherUser extends Authenticatable
 {

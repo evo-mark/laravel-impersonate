@@ -1,9 +1,9 @@
 <?php
 
-namespace Lab404\Impersonate\Models;
+namespace EvoMark\Impersonate\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Lab404\Impersonate\Services\ImpersonateManager;
+use EvoMark\Impersonate\Services\ImpersonateManager;
 
 trait Impersonate
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace Lab404\Impersonate\Guard;
+namespace EvoMark\Impersonate\Guard;
 
 use Illuminate\Auth\SessionGuard as BaseSessionGuard;
 use Illuminate\Contracts\Auth\Authenticatable;
@@ -16,6 +16,9 @@ class SessionGuard extends BaseSessionGuard
     public function quietLogin(Authenticatable $user)
     {
         $this->updateSession($user->getAuthIdentifier());
+
+        $this->ensureRememberTokenIsSet($user);
+        $this->queueRecallerCookie($user);
 
         $this->setUser($user);
     }

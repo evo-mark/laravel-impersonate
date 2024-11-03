@@ -1,11 +1,11 @@
 <?php
 
-namespace Lab404\Impersonate\Controllers;
+namespace EvoMark\Impersonate\Controllers;
 
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
-use Lab404\Impersonate\Services\ImpersonateManager;
+use EvoMark\Impersonate\Services\ImpersonateManager;
 
 class ImpersonateController extends Controller
 {
@@ -51,7 +51,7 @@ class ImpersonateController extends Controller
 
         if ($userToImpersonate->canBeImpersonated()) {
             if ($this->manager->take($request->user(), $userToImpersonate, $guardName)) {
-                $takeRedirect = $this->manager->getTakeRedirectTo();
+                $takeRedirect = $this->manager->getTakeRedirectTo($userToImpersonate);
                 if ($takeRedirect !== 'back') {
                     return redirect()->to($takeRedirect);
                 }

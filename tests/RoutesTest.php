@@ -1,6 +1,6 @@
 <?php
 
-namespace Lab404\Tests;
+namespace EvoMark\Tests;
 
 class RoutesTest extends TestCase
 {

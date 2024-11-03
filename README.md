@@ -21,35 +21,37 @@
 
 ## Requirements
 
-- Laravel 6.x to 11.x
-- PHP >= 7.2 or >= 8.0
+- Laravel 10.x to 11.x
+- PHP >= 8.2
 
 ### Laravel support
 
 | Version       | Release       |
 |:-------------:|:-------------:|
-| 6.x to 11.x   | 1.7           |
-| 6.x, 7.x      | 1.6           |
-| 5.8           | 1.5           |
-| 5.7, 5.6      | 1.2           |
-| 5.5, 5.4      | 1.1           |
+| 10.x to 11.x  | 1.8           |
+
+## Migrating to evo-mark/impersonate
+
+1. Remove the original package with `composer remove lab404/laravel-impersonate`
+2. Install the forked version using the instructions below
+3. Rename any uses of the package's classes in your app from `Lab404\Impersonate` to `EvoMark\Impersonate`
 
 ## Installation
 
 - Require it with Composer:
 ```bash
-composer require lab404/laravel-impersonate
+composer require evo-mark/laravel-impersonate
 ```
 
 - Add the service provider at the end of your `config/app.php`:
 ```php
 'providers' => [
     // ...
-    Lab404\Impersonate\ImpersonateServiceProvider::class,
+    EvoMark\Impersonate\ImpersonateServiceProvider::class,
 ],
 ```
 
-- Add the trait `Lab404\Impersonate\Models\Impersonate` to your **User** model.
+- Add the trait `EvoMark\Impersonate\Models\Impersonate` to your **User** model.
 
 ## Simple usage
 
@@ -145,7 +147,7 @@ public function impersonate(ImpersonateManager $manager, $user_id) { /* ... */ }
 ```php
 $manager = app('impersonate');
 
-// Find an user by its ID
+// Find a user by their ID
 $manager->findUserById($id);
 
 // TRUE if your are impersonating an user.
@@ -244,13 +246,17 @@ vendor/bin/phpunit
 
 ## Contributors
 
-- This package was created by [MarceauKa](https://github.com/MarceauKa) and [tghpow](https://github.com/tghpow). Many thanks to all of our [contributors](https://github.com/404labfr/laravel-impersonate/graphs/contributors).
+- This package was forked from [Lab404](https://github.com/404labfr/laravel-impersonate) and is maintained by evoMark.
 
 ## Rationale
 
 ### Why not just use `loginAsId()`?
 
 This package adds broader functionality, including Blade directives to allow you to override analytics and other tracking events when impersonating, fire events based on impersonation status, and more. Brief discussion at [issues/5](https://github.com/404labfr/laravel-impersonate/issues/5)
+
+### Why did you fork this package
+
+The original package seems to be in maintenance now, only receiving minor updates without addressing bugs or features. We wanted a few of those features.
 
 ## Licence
 

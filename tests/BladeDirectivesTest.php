@@ -1,8 +1,8 @@
 <?php
 
-namespace Lab404\Tests;
+namespace EvoMark\Tests;
 
-use Lab404\Tests\Stubs\Models\User;
+use EvoMark\Tests\Stubs\Models\User;
 
 class BladeDirectivesTest extends TestCase
 {

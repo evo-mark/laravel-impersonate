@@ -1,9 +1,9 @@
 <?php
 
-namespace Lab404\Impersonate;
+namespace EvoMark\Impersonate;
 
 use Illuminate\Support\Facades\Facade;
-use Lab404\Impersonate\Services\ImpersonateManager;
+use EvoMark\Impersonate\Services\ImpersonateManager;
 
 class Impersonate extends Facade
 {

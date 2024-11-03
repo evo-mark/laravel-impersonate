@@ -1,5 +1,15 @@
 # Laravel Impersonate Changelog
 
+## 1.8.0
+
+- **Feature**: Allow the use of callables in the `take_redirect_to` and `leave_redirect_to` config options
+- **Improvement**: Added 'remember me' support to impersonate login
+- **Chore**: Renamed namespaces to reflect fork
+- **Chore**: Dropped support for EOL PHP versions (8.1 and below) and outdated Laravel versions (9 and below)
+
+---
+> FORKED FROM LAB404 TO EVOMARK
+
 ## 1.7.5
 
 - Laravel 11.x support (thanks to [erikn69](https://github.com/erikn69), [#195](https://github.

@@ -1,6 +1,6 @@
 <?php
 
-namespace Lab404\Impersonate\Events;
+namespace EvoMark\Impersonate\Events;
 
 use Illuminate\Broadcasting\Channel;
 use Illuminate\Contracts\Auth\Authenticatable;

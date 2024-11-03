@@ -26,7 +26,8 @@ return [
      * The URI to redirect after taking an impersonation.
      *
      * Only used in the built-in controller.
-     * * Use 'back' to redirect to the previous page
+     * Use 'back' to redirect to the previous page
+     * Also accepts a callable that receives the $userToImpersonate as an argument and must return a string
      */
     'take_redirect_to' => '/',
 
@@ -35,6 +36,7 @@ return [
      *
      * Only used in the built-in controller.
      * Use 'back' to redirect to the previous page
+     * Also accepts a callable that receives no arguments and must return a string
      */
     'leave_redirect_to' => '/',
 

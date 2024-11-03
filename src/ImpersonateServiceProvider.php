@@ -1,6 +1,6 @@
 <?php
 
-namespace Lab404\Impersonate;
+namespace EvoMark\Impersonate;
 
 use Illuminate\Auth\AuthManager;
 use Illuminate\Auth\Events\Login;
@@ -8,9 +8,9 @@ use Illuminate\Auth\Events\Logout;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Event;
 use Illuminate\View\Compilers\BladeCompiler;
-use Lab404\Impersonate\Guard\SessionGuard;
-use Lab404\Impersonate\Middleware\ProtectFromImpersonation;
-use Lab404\Impersonate\Services\ImpersonateManager;
+use EvoMark\Impersonate\Guard\SessionGuard;
+use EvoMark\Impersonate\Middleware\ProtectFromImpersonation;
+use EvoMark\Impersonate\Services\ImpersonateManager;
 
 /**
  * Class ServiceProvider

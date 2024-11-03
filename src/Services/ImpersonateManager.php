@@ -1,16 +1,16 @@
 <?php
 
-namespace Lab404\Impersonate\Services;
+namespace EvoMark\Impersonate\Services;
 
 use Exception;
 use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Contracts\Auth\UserProvider;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Foundation\Application;
-use Lab404\Impersonate\Events\LeaveImpersonation;
-use Lab404\Impersonate\Events\TakeImpersonation;
-use Lab404\Impersonate\Exceptions\InvalidUserProvider;
-use Lab404\Impersonate\Exceptions\MissingUserProvider;
+use EvoMark\Impersonate\Events\LeaveImpersonation;
+use EvoMark\Impersonate\Events\TakeImpersonation;
+use EvoMark\Impersonate\Exceptions\InvalidUserProvider;
+use EvoMark\Impersonate\Exceptions\MissingUserProvider;
 
 class ImpersonateManager
 {
@@ -180,12 +180,16 @@ class ImpersonateManager
         return config('laravel-impersonate.default_impersonator_guard');
     }
 
-    public function getTakeRedirectTo(): string
+    public function getTakeRedirectTo($userToImpersonate): string
     {
+        $takeRedirectToConfig = config('laravel-impersonate.take_redirect_to');
+        if (is_callable($takeRedirectToConfig)) {
+            $takeRedirectToConfig = call_user_func($takeRedirectToConfig, $userToImpersonate);
+        }
         try {
-            $uri = route(config('laravel-impersonate.take_redirect_to'));
+            $uri = route($takeRedirectToConfig);
         } catch (\InvalidArgumentException $e) {
-            $uri = config('laravel-impersonate.take_redirect_to');
+            $uri = $takeRedirectToConfig;
         }
 
         return $uri;
@@ -193,10 +197,14 @@ class ImpersonateManager
 
     public function getLeaveRedirectTo(): string
     {
+        $leaveRedirectToConfig = config('laravel-impersonate.leave_redirect_to');
+        if (is_callable($leaveRedirectToConfig)) {
+            $leaveRedirectToConfig = call_user_func($leaveRedirectToConfig);
+        }
         try {
-            $uri = route(config('laravel-impersonate.leave_redirect_to'));
+            $uri = route($leaveRedirectToConfig);
         } catch (\InvalidArgumentException $e) {
-            $uri = config('laravel-impersonate.leave_redirect_to');
+            $uri = $leaveRedirectToConfig;
         }
 
         return $uri;

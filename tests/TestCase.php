@@ -1,10 +1,10 @@
 <?php
 
-namespace Lab404\Tests;
+namespace EvoMark\Tests;
 
-use Lab404\Impersonate\ImpersonateServiceProvider;
-use Lab404\Tests\Stubs\Models\User;
-use Lab404\Tests\Stubs\Models\OtherUser;
+use EvoMark\Impersonate\ImpersonateServiceProvider;
+use EvoMark\Tests\Stubs\Models\User;
+use EvoMark\Tests\Stubs\Models\OtherUser;
 use Orchestra\Database\ConsoleServiceProvider;
 
 class TestCase extends \Orchestra\Testbench\TestCase
