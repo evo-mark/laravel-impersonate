@@ -15,7 +15,7 @@ use EvoMark\Impersonate\Services\ImpersonateManager;
 /**
  * Class ServiceProvider
  *
- * @package Lab404\Impersonate
+ * @package EvoMark\Impersonate
  */
 class ImpersonateServiceProvider extends \Illuminate\Support\ServiceProvider
 {
@@ -113,9 +113,9 @@ class ImpersonateServiceProvider extends \Illuminate\Support\ServiceProvider
 
         $router->macro('impersonate', function () use ($router) {
             $router->get('/impersonate/take/{id}/{guardName?}',
-                '\Lab404\Impersonate\Controllers\ImpersonateController@take')->name('impersonate');
+                '\EvoMark\Impersonate\Controllers\ImpersonateController@take')->name('impersonate');
             $router->get('/impersonate/leave',
-                '\Lab404\Impersonate\Controllers\ImpersonateController@leave')->name('impersonate.leave');
+                '\EvoMark\Impersonate\Controllers\ImpersonateController@leave')->name('impersonate.leave');
         });
     }
 
